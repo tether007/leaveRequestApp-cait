@@ -1,8 +1,7 @@
 package test;
 
 import exception.LeaveException;
-import model.Employee;
-import model.LeaveRequest;
+import model.*;
 
 /** Simple tests for Employee (no external libraries needed). */
 public class EmployeeTest {
@@ -11,9 +10,9 @@ public class EmployeeTest {
     private static int failed = 0;
 
     public static void main(String[] args) {
-        Employee e1 = new Employee("E101", "Asha Rao", "Engineering", 20);
-        Employee e2 = new Employee("E102", "Ravi Kumar", "Finance", 12);
-        Employee e3 = new Employee("E103", "Meera Nair", "HR", 6);
+        Employee e1 = new FullTimeEmployee("E101", "Aarav", "IT", 20);
+        Employee e2 = new PartTimeEmployee("E102", "Diya", "HR", 10);
+        Employee e3 = new Intern("E103", "Rohan", "Sales", 5);
 
         testApplyLeaveReducesBalance(e1);
         testCancelLeaveRestoresBalance(e2);

@@ -6,7 +6,7 @@ import java.util.List;
 import exception.LeaveException;
 
 /** Stores employee information and manages that employee's leave. */
-public class Employee {
+public abstract class Employee {
 
     private String employeeId;
     private String employeeName;
@@ -69,4 +69,6 @@ public class Employee {
     public String getEmployeeName() {
         return employeeName;
     }
+
+    public abstract int getAnnualLeaveAllowance();
 }

@@ -7,4 +7,8 @@ public class PartTimeEmployee extends Employee{
 
         super(employeeId, employeeName, department, leaveBalance);
     }
+    @Override
+    public int getAnnualLeaveAllowance() {
+        return 10;
+    }
 }

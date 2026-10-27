@@ -6,4 +6,8 @@ public class Intern extends Employee {
 
         super(employeeId, employeeName, department, leaveBalance);
     }
+    @Override
+    public int getAnnualLeaveAllowance() {
+        return 5;
+    }
 }

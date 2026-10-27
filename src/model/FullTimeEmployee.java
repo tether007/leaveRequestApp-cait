@@ -6,4 +6,8 @@ public class FullTimeEmployee extends Employee{
 
         super(employeeId, employeeName, department, leaveBalance);
     }
+    @Override
+    public int getAnnualLeaveAllowance() {
+        return 20;
+    }
 }
