@@ -13,6 +13,7 @@ public class Main {
         Employee fte = new FullTimeEmployee("FTE1","Hanuman","IT",3);
         Employee pte = new PartTimeEmployee("PTE1","Mahaveer","Engineering",1);
         Employee intern = new Intern("IN1","George", "Engineering",1);
+        Employee mgr =new Manager("M104", "Meera", "IT", 30);
         try {
             e1.applyLeave(5);
             e2.applyLeave(3);
@@ -40,11 +41,12 @@ public class Main {
         Employee[] employees = {
                 new FullTimeEmployee("E001", "Aarav", "IT", 20),
                 new PartTimeEmployee("E002", "Diya", "HR", 10),
-                new Intern("E003", "Rohan", "Engineering", 5)
+                new Intern("E003", "Rohan", "Engineering", 5),
+                new Manager("M104", "Meera", "IT", 30);
         };
 
         //Runtime polymorphism
-        //The important point is that the loop uses Employee references, but Java calls the overridden method for the actual object type.   
+        //The important point is that the loop uses Employee references, but Java calls the overridden method for the actual object type.
         for (Employee employee : employees) {
             employee.displayDetails();
 
