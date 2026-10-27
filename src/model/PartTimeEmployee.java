@@ -2,6 +2,8 @@ package model;
 
 public class PartTimeEmployee extends Employee{
 
+    private static final int ANNUAL_LEAVE_ALLOWANCE = 10;
+
     public PartTimeEmployee(String employeeId, String employeeName,
                             String department, int leaveBalance) {
 
@@ -9,6 +11,6 @@ public class PartTimeEmployee extends Employee{
     }
     @Override
     public int getAnnualLeaveAllowance() {
-        return 10;
+        return ANNUAL_LEAVE_ALLOWANCE;
     }
 }

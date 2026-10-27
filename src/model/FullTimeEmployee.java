@@ -1,6 +1,9 @@
 package model;
 //inherit
 public class FullTimeEmployee extends Employee{
+
+    private static final int ANNUAL_LEAVE_ALLOWANCE = 20;
+
     public FullTimeEmployee(String employeeId, String employeeName,
                             String department, int leaveBalance) {
 
@@ -8,6 +11,6 @@ public class FullTimeEmployee extends Employee{
     }
     @Override
     public int getAnnualLeaveAllowance() {
-        return 20;
+        return ANNUAL_LEAVE_ALLOWANCE;
     }
 }

@@ -3,6 +3,9 @@ package model;
 
 public class Manager extends Employee {
 
+   //Refactor-2 : hyperparameterizing the employees instead of hard code
+    private static final int ANNUAL_LEAVE_ALLOWANCE = 30;
+
     public Manager(String employeeId, String employeeName,
                    String department, int leaveBalance) {
         super(employeeId, employeeName, department, leaveBalance);
@@ -10,7 +13,7 @@ public class Manager extends Employee {
 
     @Override
     public int getAnnualLeaveAllowance() {
-        return 30;
+        return ANNUAL_LEAVE_ALLOWANCE;
     }
 
     @Override
