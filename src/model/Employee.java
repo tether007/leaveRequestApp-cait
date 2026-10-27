@@ -37,6 +37,29 @@ public abstract class Employee {
         return request;
     }
 
+    // Method overloading
+    public LeaveRequest applyLeave(int days, String reason) throws LeaveException {
+
+        if (days <= 0) {
+            throw new LeaveException("Leave days must be greater than 0.");
+        }
+
+        if (days > leaveBalance) {
+            throw new LeaveException(
+                    employeeName + " has only " + leaveBalance
+                            + " day(s) left, cannot apply for " + days + "."
+            );
+        }
+
+        LeaveRequest request =
+                new LeaveRequest(nextRequestId++, days, reason);
+
+        leaveHistory.add(request);
+        leaveBalance -= days;
+
+        return request;
+    }
+
     /** Cancels an approved request and gives the days back. */
     public void cancelLeave(int requestId) throws LeaveException {
         for (LeaveRequest request : leaveHistory) {
