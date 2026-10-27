@@ -36,5 +36,24 @@ public class Main {
         System.out.println();
         intern.displayDetails();
         System.out.println();
+
+        Employee[] employees = {
+                new FullTimeEmployee("E001", "Aarav", "IT", 20),
+                new PartTimeEmployee("E002", "Diya", "HR", 10),
+                new Intern("E003", "Rohan", "Engineering", 5)
+        };
+
+        //Runtime polymorphism
+        //The important point is that the loop uses Employee references, but Java calls the overridden method for the actual object type.   
+        for (Employee employee : employees) {
+            employee.displayDetails();
+
+            System.out.println(
+                    "Annual Leave Allowance: "
+                            + employee.getAnnualLeaveAllowance()
+            );
+
+            System.out.println();
+        }
     }
 }
