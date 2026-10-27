@@ -43,7 +43,10 @@ public abstract class Employee {
         if (days <= 0) {
             throw new LeaveException("Leave days must be greater than 0.");
         }
-
+        //Refactoring for validation of reason
+        if (reason == null || reason.isBlank()) {
+            throw new LeaveException("Leave reason cannot be empty.");
+        }
         if (days > leaveBalance) {
             throw new LeaveException(
                     employeeName + " has only " + leaveBalance
